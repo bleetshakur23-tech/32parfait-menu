@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff8e8;
+    color: #232323;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    width: 100%;
+    background: #ffffff;
+    text-align: center;
+    padding: 24px 15px 20px;
+    border-bottom: 3px solid #e1d7c3;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.logo-blue {
+    color: #1e5fbe;
+}
+
+.logo-red {
+    color: #dc2d37;
+}
+
+.menu-title {
+    margin-top: 8px;
+    color: #1e5fbe;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   MAIN MENU
+   ========================================================= */
+
+.menu-container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 16px 50px;
+}
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.category {
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 20px 0 16px;
+    margin-bottom: 22px;
+    border-top: 2px solid #e1d7c3;
+    border-bottom: 2px solid #e1d7c3;
+}
+
+.category-title.blue {
+    color: #1e5fbe;
+}
+
+.category-title.red {
+    color: #dc2d37;
+}
+
+/* =========================================================
+   SUBCATEGORY
+   ========================================================= */
+
+.subcategory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    padding: 14px 4px;
+    margin: 15px 0 20px;
+
+    border-bottom: 2px solid #e1d7c3;
+}
+
+.subcategory span {
+    color: #dc2d37;
+    font-size: 17px;
+}
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+.product {
+    background: #fffdf5;
+    border: 1px solid #e8dfcf;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+/* =========================================================
+   SQUARE PRODUCT IMAGE
+   ========================================================= */
+
+.product img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: contain;
+
+    background: #faf5eb;
+
+    border-radius: 10px;
+
+    margin-bottom: 14px;
+}
+
+/* =========================================================
+   PRODUCT TEXT
+   ========================================================= */
+
+.product h3 {
+    font-size: 19px;
+    line-height: 1.25;
+    font-weight: 800;
+
+    color: #232323;
+
+    margin-bottom: 7px;
+}
+
+.product p {
+    font-size: 14px;
+    line-height: 1.45;
+
+    color: #696969;
+
+    margin-bottom: 10px;
+}
+
+.product strong {
+    display: block;
+
+    color: #dc2d37;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    border-top: 2px solid #e1d7c3;
+
+    padding: 25px 10px 10px;
+
+    color: #696969;
+}
+
+footer strong {
+    font-size: 16px;
+    color: #1e5fbe;
+}
+
+footer p {
+    margin-top: 7px;
+    font-size: 13px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .header {
+        padding: 20px 10px 17px;
+    }
+
+    .logo {
+        font-size: 38px;
+    }
+
+    .menu-title {
+        font-size: 19px;
+    }
+
+    .menu-container {
+        padding: 16px 12px 45px;
+    }
+
+    .category-title {
+        font-size: 26px;
+    }
+
+    .subcategory {
+        font-size: 19px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product {
+        padding: 15px;
+    }
+
+    .product h3 {
+        font-size: 20px;
+    }
+
+    .product p {
+        font-size: 15px;
+    }
+
+    .product strong {
+        font-size: 19px;
+    }
+}
+
+/* =========================================================
+   LARGER SCREENS
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product h3 {
+        font-size: 18px;
+    }
+
+    .product p {
+        font-size: 14px;
+    }
+}
