@@ -1,8 +1,3 @@
-/* =========================================================
-   32 PARFAIT MENU
-   COMPACT SWIPE DESIGN
-========================================================= */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,8 +16,68 @@ body {
 
 
 /* =========================================================
-   COLORS
-========================================================= */
+   HEADER
+   ========================================================= */
+
+.header {
+    background: white;
+    text-align: center;
+    padding: 18px 15px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.logo-blue {
+    color: #1e5fbe;
+}
+
+.logo-red {
+    color: #dc2d37;
+}
+
+.menu-title {
+    color: #1e5fbe;
+    font-size: 17px;
+    font-weight: 800;
+    margin-top: 7px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.menu-category {
+    padding: 18px 12px 5px;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 8px 0 12px;
+    letter-spacing: 1px;
+}
 
 .blue {
     color: #1e5fbe;
@@ -34,7 +89,220 @@ body {
 
 
 /* =========================================================
-   HEADER
+   SWIPE SECTION
+   ========================================================= */
+
+.swipe-section {
+    background: #fffdf7;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    padding: 10px 10px 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBCATEGORY HEADER
+   ========================================================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 5px 9px;
+}
+
+.section-heading h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #232323;
+}
+
+.section-heading span {
+    font-size: 15px;
+    font-weight: 800;
+    color: #dc2d37;
+}
+
+
+/* =========================================================
+   HORIZONTAL SWIPE
+   ========================================================= */
+
+.product-slider {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+.product-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+.product-track {
+    display: flex;
+    width: max-content;
+}
+
+
+.product-slide {
+    width: calc(100vw - 64px);
+    max-width: 560px;
+
+    flex-shrink: 0;
+
+    scroll-snap-align: center;
+
+    padding: 0 4px;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
+.product-slide img {
+    width: 100%;
+    height: min(62vw, 330px);
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    background: #f4eee1;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+   ========================================================= */
+
+.product-info {
+    padding: 9px 4px 2px;
+}
+
+.product-info h4 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #232323;
+    margin-bottom: 3px;
+}
+
+.product-info p {
+    font-size: 13px;
+    line-height: 1.35;
+    color: #696969;
+    margin-bottom: 5px;
+}
+
+.product-info strong {
+    font-size: 17px;
+    color: #dc2d37;
+}
+
+
+/* =========================================================
+   SWIPE HINT
+   ========================================================= */
+
+.swipe-hint {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+    background: white;
+    margin-top: 18px;
+    padding: 25px 15px 30px;
+    border-top: 1px solid #e1d7c3;
+}
+
+footer strong {
+    color: #1e5fbe;
+    font-size: 16px;
+}
+
+footer p {
+    color: #777;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .category-title {
+        font-size: 21px;
+    }
+
+    .product-slide img {
+        height: 58vw;
+    }
+
+    .product-info h4 {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   TABLETS / DESKTOP
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+    .header {
+        padding: 22px;
+    }
+
+    .logo {
+        font-size: 44px;
+    }
+
+    .menu-title {
+        font-size: 19px;
+    }
+
+    .menu-category {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .product-slide {
+        width: 560px;
+    }
+
+    .product-slide img {
+        height: 330px;
+    }
+}   HEADER
 ========================================================= */
 
 .header {
