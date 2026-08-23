@@ -1,17 +1,73 @@
+/* =========================================================
+   32 PARFAIT MENU
+   MOBILE-FIRST DESIGN
+   ========================================================= */
+
+
+/* =========================================================
+   COLORS
+   ========================================================= */
+
+:root {
+
+    --blue: #1e5fbe;
+    --red: #dc2d37;
+
+    --dark: #232323;
+    --gray: #696969;
+
+    --cream: #fff8e8;
+    --card-cream: #fffdf5;
+
+    --white: #ffffff;
+
+    --divider: #e1d7c3;
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
+
     box-sizing: border-box;
+
     margin: 0;
     padding: 0;
+
 }
+
 
 html {
-    scroll-behavior: smooth;
+
+    width: 100%;
+
+    overflow-x: hidden;
+
 }
 
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff8e8;
-    color: #232323;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background: var(--cream);
+
+    color: var(--dark);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+
+    -webkit-text-size-adjust: 100%;
+
 }
 
 
@@ -19,22 +75,633 @@ body {
    HEADER
    ========================================================= */
 
-.header {
-    background: white;
+.site-header {
+
+    width: 100%;
+
+    background: var(--white);
+
     text-align: center;
-    padding: 18px 15px 15px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+    padding:
+        20px
+        12px
+        16px;
+
+    border-bottom:
+        1px solid
+        var(--divider);
+
 }
+
 
 .logo {
-    font-size: 38px;
-    font-weight: 800;
+
+    font-size: 39px;
+
     line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
 }
 
+
+.logo-blue {
+
+    color: var(--blue);
+
+}
+
+
+.logo-red {
+
+    color: var(--red);
+
+}
+
+
+.menu-label {
+
+    margin-top: 8px;
+
+    color: var(--blue);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   MAIN MENU
+   ========================================================= */
+
+.menu {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding:
+        0
+        12px
+        40px;
+
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.category {
+
+    width: 100%;
+
+    padding:
+        12px
+        0
+        8px;
+
+}
+
+
+.category + .category {
+
+    border-top:
+        2px solid
+        var(--divider);
+
+    margin-top: 12px;
+
+    padding-top: 24px;
+
+}
+
+
+/* =========================================================
+   CATEGORY TITLE
+   ========================================================= */
+
+.category-title {
+
+    text-align: center;
+
+    font-size: 26px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    margin:
+        10px
+        0
+        18px;
+
+}
+
+
+.blue {
+
+    color: var(--blue);
+
+}
+
+
+.red {
+
+    color: var(--red);
+
+}
+
+
+/* =========================================================
+   SUBCATEGORY
+   ========================================================= */
+
+.subcategory {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin:
+        6px
+        0
+        10px;
+
+    padding:
+        0
+        4px;
+
+}
+
+
+.subcategory h2 {
+
+    color: var(--dark);
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+}
+
+
+.subcategory span {
+
+    color: var(--red);
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   SWIPE CARD
+   ========================================================= */
+
+.swipe-card {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: var(--card-cream);
+
+    border:
+        1px solid
+        var(--divider);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, .06);
+
+    margin-bottom: 22px;
+
+    /*
+     * Prevent browser gesture handling from
+     * interfering with our horizontal swipe.
+     */
+
+    touch-action: pan-y;
+
+}
+
+
+/* =========================================================
+   PRODUCT TRACK
+   ========================================================= */
+
+.product-track {
+
+    display: flex;
+
+    width: 100%;
+
+    transition:
+        transform
+        .32s
+        ease-out;
+
+    will-change: transform;
+
+}
+
+
+/* =========================================================
+   PRODUCT SLIDE
+   ========================================================= */
+
+.product-slide {
+
+    flex:
+        0 0
+        100%;
+
+    width: 100%;
+
+    padding:
+        12px
+        12px
+        18px;
+
+    text-align: left;
+
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
+.product-slide img {
+
+    display: block;
+
+    width: 100%;
+
+    /*
+     * Mobile-friendly image height.
+     *
+     * The picture is NOT forced into a square.
+     * This gives tall JPGs room to display.
+     */
+
+    height: 270px;
+
+    margin:
+        0
+        auto
+        14px;
+
+    /*
+     * MOST IMPORTANT:
+     *
+     * contain = show the complete image.
+     * cover = crop the image.
+     */
+
+    object-fit: contain;
+
+    object-position: center center;
+
+    background:
+        #faf5eb;
+
+    border-radius: 12px;
+
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+   ========================================================= */
+
+.product-slide h3 {
+
+    color: var(--dark);
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+
+    margin-bottom: 6px;
+
+}
+
+
+/* =========================================================
+   PRODUCT DESCRIPTION
+   ========================================================= */
+
+.product-slide p {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================================
+   PRODUCT PRICE
+   ========================================================= */
+
+.product-slide strong {
+
+    display: block;
+
+    color: var(--red);
+
+    font-size: 19px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   SWIPE HINT
+   ========================================================= */
+
+.swipe-hint {
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    padding:
+        0
+        0
+        12px;
+
+    opacity: .8;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        var(--divider);
+
+    padding:
+        25px
+        10px
+        35px;
+
+    margin-top: 5px;
+
+}
+
+
+.footer strong {
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+}
+
+
+.footer span {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   NORMAL ANDROID PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .site-header {
+
+        padding-top: 17px;
+
+        padding-bottom: 14px;
+
+    }
+
+
+    .logo {
+
+        font-size: 36px;
+
+    }
+
+
+    .menu-label {
+
+        font-size: 18px;
+
+    }
+
+
+    .menu {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+    }
+
+
+    .category-title {
+
+        font-size: 24px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .subcategory h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .subcategory span {
+
+        font-size: 15px;
+
+    }
+
+
+    .product-slide {
+
+        padding:
+            10px
+            10px
+            16px;
+
+    }
+
+
+    .product-slide img {
+
+        /*
+         * Keep the image large enough to see,
+         * but don't make it unnecessarily huge.
+         */
+
+        height: 255px;
+
+        margin-bottom: 13px;
+
+    }
+
+
+    .product-slide h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .product-slide p {
+
+        font-size: 13.5px;
+
+    }
+
+
+    .product-slide strong {
+
+        font-size: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL ANDROID PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .logo {
+
+        font-size: 33px;
+
+    }
+
+
+    .category-title {
+
+        font-size: 22px;
+
+    }
+
+
+    .product-slide img {
+
+        height: 225px;
+
+    }
+
+
+    .product-slide h3 {
+
+        font-size: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   LARGER PHONES
+   ========================================================= */
+
+@media (min-width: 481px) {
+
+    .product-slide img {
+
+        height: 320px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY WIDE SCREENS
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+    .menu {
+
+        max-width: 620px;
+
+    }
+
+}
 .logo-blue {
     color: #1e5fbe;
 }
