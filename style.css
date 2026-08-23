@@ -1,6 +1,6 @@
 /* =========================================================
-   32 PARFAIT MENU
-   MOBILE-FIRST DESIGN
+   32 PARFAIT
+   COMPACT ONE-CARD MOBILE MENU
    ========================================================= */
 
 
@@ -10,18 +10,18 @@
 
 :root {
 
-    --blue: #1e5fbe;
-    --red: #dc2d37;
+    --blue: #1762c0;
+    --red: #d92d3a;
 
-    --dark: #232323;
-    --gray: #696969;
+    --dark: #202020;
+    --gray: #707070;
 
-    --cream: #fff8e8;
-    --card-cream: #fffdf5;
+    --cream: #fff9ea;
+    --card: #fffdf7;
 
     --white: #ffffff;
 
-    --divider: #e1d7c3;
+    --border: #e2d8c5;
 
 }
 
@@ -35,6 +35,7 @@
     box-sizing: border-box;
 
     margin: 0;
+
     padding: 0;
 
 }
@@ -43,6 +44,8 @@
 html {
 
     width: 100%;
+
+    min-height: 100%;
 
     overflow-x: hidden;
 
@@ -84,38 +87,38 @@ body {
     text-align: center;
 
     padding:
-        20px
-        12px
-        16px;
+        18px
+        10px
+        15px;
 
     border-bottom:
         1px solid
-        var(--divider);
+        var(--border);
 
 }
 
 
 .logo {
 
-    font-size: 39px;
+    font-size: 36px;
 
     line-height: 1;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
 
 }
 
 
-.logo-blue {
+.blue-text {
 
     color: var(--blue);
 
 }
 
 
-.logo-red {
+.red-text {
 
     color: var(--red);
 
@@ -124,35 +127,37 @@ body {
 
 .menu-label {
 
-    margin-top: 8px;
+    margin-top: 7px;
 
-    color: var(--blue);
-
-    font-size: 20px;
+    font-size: 17px;
 
     font-weight: 800;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+
+    color: var(--blue);
 
 }
 
 
 /* =========================================================
-   MAIN MENU
+   MENU
    ========================================================= */
 
 .menu {
 
     width: 100%;
 
-    max-width: 600px;
+    max-width: 520px;
 
-    margin: 0 auto;
+    margin:
+        0
+        auto;
 
     padding:
         0
-        12px
-        40px;
+        10px
+        35px;
 
 }
 
@@ -166,7 +171,7 @@ body {
     width: 100%;
 
     padding:
-        12px
+        14px
         0
         8px;
 
@@ -177,11 +182,11 @@ body {
 
     border-top:
         2px solid
-        var(--divider);
+        var(--border);
 
     margin-top: 12px;
 
-    padding-top: 24px;
+    padding-top: 22px;
 
 }
 
@@ -194,32 +199,18 @@ body {
 
     text-align: center;
 
-    font-size: 26px;
+    font-size: 25px;
 
-    line-height: 1.15;
+    line-height: 1.1;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    letter-spacing: .5px;
+    letter-spacing: .4px;
 
     margin:
-        10px
+        3px
         0
-        18px;
-
-}
-
-
-.blue {
-
-    color: var(--blue);
-
-}
-
-
-.red {
-
-    color: var(--red);
+        16px;
 
 }
 
@@ -234,33 +225,29 @@ body {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: space-between;
 
-    gap: 10px;
+    align-items: center;
 
     margin:
-        6px
+        7px
         0
-        10px;
+        9px;
 
     padding:
         0
-        4px;
+        3px;
 
 }
 
 
 .subcategory h2 {
 
-    color: var(--dark);
-
-    font-size: 19px;
-
-    font-weight: 800;
+    font-size: 18px;
 
     line-height: 1.2;
+
+    font-weight: 900;
 
 }
 
@@ -269,45 +256,43 @@ body {
 
     color: var(--red);
 
-    font-size: 16px;
+    font-size: 15px;
 
-    font-weight: 800;
-
-    white-space: nowrap;
+    font-weight: 900;
 
 }
 
 
 /* =========================================================
-   SWIPE CARD
+   ONE PRODUCT VIEWER
    ========================================================= */
 
-.swipe-card {
+.product-viewer {
 
     position: relative;
 
     width: 100%;
 
-    overflow: hidden;
-
-    background: var(--card-cream);
+    background: var(--card);
 
     border:
         1px solid
-        var(--divider);
+        var(--border);
 
     border-radius: 16px;
 
+    overflow: hidden;
+
     box-shadow:
-        0 3px 10px
-        rgba(0, 0, 0, .06);
+        0 3px 12px
+        rgba(0, 0, 0, .07);
 
     margin-bottom: 22px;
 
     /*
-     * Prevent browser gesture handling from
-     * interfering with our horizontal swipe.
-     */
+    This allows normal vertical page scrolling,
+    while JavaScript handles horizontal swipes.
+    */
 
     touch-action: pan-y;
 
@@ -315,131 +300,153 @@ body {
 
 
 /* =========================================================
-   PRODUCT TRACK
+   PRODUCT CARD
+
+   THERE IS ONLY ONE CARD.
+
+   No flex row.
+   No second image beside it.
+   No horizontal track.
    ========================================================= */
 
-.product-track {
-
-    display: flex;
-
-    width: 100%;
-
-    transition:
-        transform
-        .32s
-        ease-out;
-
-    will-change: transform;
-
-}
-
-
-/* =========================================================
-   PRODUCT SLIDE
-   ========================================================= */
-
-.product-slide {
-
-    flex:
-        0 0
-        100%;
+.product-card {
 
     width: 100%;
 
     padding:
-        12px
-        12px
-        18px;
-
-    text-align: left;
+        10px
+        10px
+        14px;
 
 }
 
 
 /* =========================================================
-   PRODUCT IMAGE
+   IMAGE AREA
    ========================================================= */
 
-.product-slide img {
+.image-area {
+
+    width: 100%;
+
+    height: 270px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #faf5e9;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   IMAGE
+
+   CONTAIN IS IMPORTANT.
+
+   It shows the entire JPG.
+
+   Nothing gets cut from the top or bottom.
+   ========================================================= */
+
+.product-image {
 
     display: block;
 
     width: 100%;
 
-    /*
-     * Mobile-friendly image height.
-     *
-     * The picture is NOT forced into a square.
-     * This gives tall JPGs room to display.
-     */
-
-    height: 270px;
-
-    margin:
-        0
-        auto
-        14px;
-
-    /*
-     * MOST IMPORTANT:
-     *
-     * contain = show the complete image.
-     * cover = crop the image.
-     */
+    height: 100%;
 
     object-fit: contain;
 
     object-position: center center;
 
-    background:
-        #faf5eb;
+    user-select: none;
 
-    border-radius: 12px;
+    -webkit-user-drag: none;
+
+    pointer-events: none;
 
 }
 
 
 /* =========================================================
-   PRODUCT NAME
+   MISSING IMAGE
    ========================================================= */
 
-.product-slide h3 {
+.image-area.no-image {
+
+    position: relative;
+
+}
+
+
+.image-area.no-image::after {
+
+    content:
+        "IMAGE NOT UPLOADED YET";
+
+    color: #999;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+   ========================================================= */
+
+.product-info {
+
+    padding:
+        13px
+        3px
+        2px;
+
+}
+
+
+.product-name {
 
     color: var(--dark);
 
     font-size: 20px;
 
-    line-height: 1.25;
+    line-height: 1.2;
 
-    font-weight: 800;
+    font-weight: 900;
 
     margin-bottom: 6px;
 
 }
 
 
-/* =========================================================
-   PRODUCT DESCRIPTION
-   ========================================================= */
-
-.product-slide p {
+.product-description {
 
     color: var(--gray);
 
-    font-size: 14px;
+    font-size: 13.5px;
 
-    line-height: 1.45;
+    line-height: 1.4;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
 }
 
 
-/* =========================================================
-   PRODUCT PRICE
-   ========================================================= */
-
-.product-slide strong {
+.product-price {
 
     display: block;
 
@@ -449,7 +456,76 @@ body {
 
     line-height: 1.2;
 
+    font-weight: 900;
+
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.viewer-controls {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0
+        10px
+        8px;
+
+}
+
+
+.viewer-controls button {
+
+    width: 38px;
+
+    height: 34px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-size: 27px;
+
+    line-height: 30px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.viewer-controls button:disabled {
+
+    opacity: .18;
+
+    cursor: default;
+
+}
+
+
+.product-counter {
+
+    color: #888;
+
+    font-size: 11px;
+
     font-weight: 800;
+
+    letter-spacing: .5px;
 
 }
 
@@ -464,18 +540,92 @@ body {
 
     color: #999;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 1px;
 
     padding:
         0
         0
-        12px;
+        11px;
 
-    opacity: .8;
+}
+
+
+/* =========================================================
+   CHANGE ANIMATION
+
+   The SAME CARD changes.
+
+   Nothing slides in from another side.
+   ========================================================= */
+
+.product-viewer.change-left
+.product-card {
+
+    animation:
+        changeFromLeft
+        .18s
+        ease-out;
+
+}
+
+
+.product-viewer.change-right
+.product-card {
+
+    animation:
+        changeFromRight
+        .18s
+        ease-out;
+
+}
+
+
+@keyframes changeFromLeft {
+
+    0% {
+
+        opacity: .35;
+
+        transform:
+            translateX(-10px);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+@keyframes changeFromRight {
+
+    0% {
+
+        opacity: .35;
+
+        transform:
+            translateX(10px);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
 
 }
 
@@ -486,37 +636,33 @@ body {
 
 .footer {
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 5px;
+    width: 100%;
 
     text-align: center;
 
     border-top:
         1px solid
-        var(--divider);
+        var(--border);
 
     padding:
-        25px
+        24px
         10px
-        35px;
+        32px;
 
-    margin-top: 5px;
+    margin-top: 8px;
 
 }
 
 
 .footer strong {
 
+    display: block;
+
     color: var(--gray);
 
-    font-size: 15px;
+    font-size: 14px;
+
+    margin-bottom: 5px;
 
 }
 
@@ -525,111 +671,76 @@ body {
 
     color: var(--gray);
 
-    font-size: 12px;
+    font-size: 11px;
 
 }
 
 
 /* =========================================================
-   NORMAL ANDROID PHONES
+   NORMAL ANDROID PHONE
    ========================================================= */
 
 @media (max-width: 480px) {
 
     .site-header {
 
-        padding-top: 17px;
+        padding-top: 16px;
 
-        padding-bottom: 14px;
+        padding-bottom: 13px;
 
     }
 
 
     .logo {
 
-        font-size: 36px;
-
-    }
-
-
-    .menu-label {
-
-        font-size: 18px;
+        font-size: 34px;
 
     }
 
 
     .menu {
 
-        padding-left: 10px;
+        padding-left: 9px;
 
-        padding-right: 10px;
+        padding-right: 9px;
 
     }
 
 
     .category-title {
 
-        font-size: 24px;
-
-        margin-bottom: 15px;
+        font-size: 23px;
 
     }
 
 
-    .subcategory h2 {
-
-        font-size: 18px;
-
-    }
-
-
-    .subcategory span {
-
-        font-size: 15px;
-
-    }
-
-
-    .product-slide {
-
-        padding:
-            10px
-            10px
-            16px;
-
-    }
-
-
-    .product-slide img {
+    .image-area {
 
         /*
-         * Keep the image large enough to see,
-         * but don't make it unnecessarily huge.
-         */
+        Large enough to clearly see the picture,
+        but compact enough for a phone.
+        */
 
-        height: 255px;
-
-        margin-bottom: 13px;
+        height: 260px;
 
     }
 
 
-    .product-slide h3 {
+    .product-name {
 
         font-size: 19px;
 
     }
 
 
-    .product-slide p {
+    .product-description {
 
-        font-size: 13.5px;
+        font-size: 13px;
 
     }
 
 
-    .product-slide strong {
+    .product-price {
 
         font-size: 18px;
 
@@ -639,33 +750,43 @@ body {
 
 
 /* =========================================================
-   SMALL ANDROID PHONES
+   SMALL PHONES
    ========================================================= */
 
 @media (max-width: 360px) {
 
     .logo {
 
-        font-size: 33px;
+        font-size: 32px;
 
     }
 
 
     .category-title {
 
-        font-size: 22px;
+        font-size: 21px;
 
     }
 
 
-    .product-slide img {
+    .image-area {
 
-        height: 225px;
+        height: 230px;
 
     }
 
 
-    .product-slide h3 {
+    .product-card {
+
+        padding:
+            8px
+            8px
+            12px;
+
+    }
+
+
+    .product-name {
 
         font-size: 18px;
 
@@ -680,797 +801,10 @@ body {
 
 @media (min-width: 481px) {
 
-    .product-slide img {
+    .image-area {
 
-        height: 320px;
-
-    }
-
-}
-
-
-/* =========================================================
-   VERY WIDE SCREENS
-   ========================================================= */
-
-@media (min-width: 700px) {
-
-    .menu {
-
-        max-width: 620px;
+        height: 310px;
 
     }
 
-}
-.logo-blue {
-    color: #1e5fbe;
-}
-
-.logo-red {
-    color: #dc2d37;
-}
-
-.menu-title {
-    color: #1e5fbe;
-    font-size: 17px;
-    font-weight: 800;
-    margin-top: 7px;
-    letter-spacing: 2px;
-}
-
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
-main {
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   CATEGORY
-   ========================================================= */
-
-.menu-category {
-    padding: 18px 12px 5px;
-}
-
-.category-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 800;
-    margin: 8px 0 12px;
-    letter-spacing: 1px;
-}
-
-.blue {
-    color: #1e5fbe;
-}
-
-.red {
-    color: #dc2d37;
-}
-
-
-/* =========================================================
-   SWIPE SECTION
-   ========================================================= */
-
-.swipe-section {
-    background: #fffdf7;
-    border-radius: 16px;
-    margin-bottom: 16px;
-    padding: 10px 10px 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   SUBCATEGORY HEADER
-   ========================================================= */
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 5px 9px;
-}
-
-.section-heading h3 {
-    font-size: 17px;
-    font-weight: 800;
-    color: #232323;
-}
-
-.section-heading span {
-    font-size: 15px;
-    font-weight: 800;
-    color: #dc2d37;
-}
-
-
-/* =========================================================
-   HORIZONTAL SWIPE
-   ========================================================= */
-
-.product-slider {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-}
-
-.product-slider::-webkit-scrollbar {
-    display: none;
-}
-
-
-.product-track {
-    display: flex;
-    width: max-content;
-}
-
-
-.product-slide {
-    width: calc(100vw - 64px);
-    max-width: 560px;
-
-    flex-shrink: 0;
-
-    scroll-snap-align: center;
-
-    padding: 0 4px;
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-   ========================================================= */
-
-.product-slide img {
-    width: 100%;
-    height: min(62vw, 330px);
-
-    display: block;
-
-    object-fit: cover;
-
-    border-radius: 13px;
-
-    background: #f4eee1;
-}
-
-
-/* =========================================================
-   PRODUCT INFORMATION
-   ========================================================= */
-
-.product-info {
-    padding: 9px 4px 2px;
-}
-
-.product-info h4 {
-    font-size: 19px;
-    font-weight: 800;
-    color: #232323;
-    margin-bottom: 3px;
-}
-
-.product-info p {
-    font-size: 13px;
-    line-height: 1.35;
-    color: #696969;
-    margin-bottom: 5px;
-}
-
-.product-info strong {
-    font-size: 17px;
-    color: #dc2d37;
-}
-
-
-/* =========================================================
-   SWIPE HINT
-   ========================================================= */
-
-.swipe-hint {
-    text-align: center;
-    font-size: 11px;
-    color: #999;
-    margin-top: 8px;
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    text-align: center;
-    background: white;
-    margin-top: 18px;
-    padding: 25px 15px 30px;
-    border-top: 1px solid #e1d7c3;
-}
-
-footer strong {
-    color: #1e5fbe;
-    font-size: 16px;
-}
-
-footer p {
-    color: #777;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .logo {
-        font-size: 34px;
-    }
-
-    .category-title {
-        font-size: 21px;
-    }
-
-    .product-slide img {
-        height: 58vw;
-    }
-
-    .product-info h4 {
-        font-size: 17px;
-    }
-}
-
-
-/* =========================================================
-   TABLETS / DESKTOP
-   ========================================================= */
-
-@media (min-width: 700px) {
-
-    .header {
-        padding: 22px;
-    }
-
-    .logo {
-        font-size: 44px;
-    }
-
-    .menu-title {
-        font-size: 19px;
-    }
-
-    .menu-category {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .product-slide {
-        width: 560px;
-    }
-
-    .product-slide img {
-        height: 330px;
-    }
-}   HEADER
-========================================================= */
-
-.header {
-    background: white;
-    text-align: center;
-    padding: 20px 15px 16px;
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.logo {
-    font-size: 38px;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.menu-label {
-    margin-top: 6px;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #1e5fbe;
-}
-
-
-/* =========================================================
-   MAIN MENU
-========================================================= */
-
-.menu {
-    width: 100%;
-    padding-bottom: 30px;
-}
-
-
-/* =========================================================
-   CATEGORY
-========================================================= */
-
-.category {
-    padding: 20px 0 5px;
-    border-bottom: 1px solid #e1d7c3;
-}
-
-.category-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: 1px;
-
-    margin-bottom: 14px;
-}
-
-
-/* =========================================================
-   SUBCATEGORY
-========================================================= */
-
-.subcategory {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 16px 10px;
-
-    font-size: 17px;
-    font-weight: 800;
-}
-
-.subcategory strong {
-    color: #dc2d37;
-    font-size: 15px;
-}
-
-
-/* =========================================================
-   HORIZONTAL SWIPE AREA
-========================================================= */
-
-.swipe-row {
-    display: flex;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    gap: 12px;
-
-    padding: 0 16px 6px;
-
-    scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-}
-
-.swipe-row::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* =========================================================
-   PRODUCT
-========================================================= */
-
-.product {
-    flex: 0 0 78%;
-
-    max-width: 320px;
-
-    background: #fffdf6;
-
-    border-radius: 14px;
-
-    padding: 10px;
-
-    scroll-snap-align: center;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.product img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    object-fit: contain;
-
-    display: block;
-
-    background: #faf5eb;
-
-    border-radius: 10px;
-
-    margin-bottom: 9px;
-}
-
-
-/* =========================================================
-   PRODUCT NAME
-========================================================= */
-
-.product h3 {
-    font-size: 17px;
-    font-weight: 700;
-
-    line-height: 1.2;
-
-    margin-bottom: 5px;
-}
-
-
-/* =========================================================
-   PRICE
-========================================================= */
-
-.product strong {
-    display: block;
-
-    color: #dc2d37;
-
-    font-size: 17px;
-    font-weight: 800;
-}
-
-
-/* =========================================================
-   SWIPE HINT
-========================================================= */
-
-.swipe-hint {
-    text-align: center;
-
-    color: #777;
-
-    font-size: 12px;
-
-    margin-top: 7px;
-    margin-bottom: 5px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    text-align: center;
-
-    padding: 30px 20px 40px;
-
-    background: white;
-
-    color: #696969;
-
-    font-size: 13px;
-}
-
-footer strong {
-    color: #1e5fbe;
-
-    font-size: 16px;
-}
-
-footer p {
-    margin-top: 6px;
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .logo {
-        font-size: 34px;
-    }
-
-    .category-title {
-        font-size: 22px;
-    }
-
-    .product {
-        flex-basis: 82%;
-    }
-
-}
-
-
-/* =========================================================
-   TABLETS / LARGER SCREENS
-========================================================= */
-
-@media (min-width: 700px) {
-
-    .product {
-        flex-basis: 300px;
-    }
-
-    .swipe-row {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-}
-.logo-blue {
-    color: #1e5fbe;
-}
-
-.logo-red {
-    color: #dc2d37;
-}
-
-.menu-title {
-    margin-top: 8px;
-    color: #1e5fbe;
-    font-size: 21px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-/* =========================================================
-   MAIN MENU
-   ========================================================= */
-
-.menu-container {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px 16px 50px;
-}
-
-/* =========================================================
-   CATEGORY
-   ========================================================= */
-
-.category {
-    width: 100%;
-    margin-bottom: 45px;
-}
-
-.category-title {
-    text-align: center;
-    font-size: 29px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    padding: 20px 0 16px;
-    margin-bottom: 22px;
-    border-top: 2px solid #e1d7c3;
-    border-bottom: 2px solid #e1d7c3;
-}
-
-.category-title.blue {
-    color: #1e5fbe;
-}
-
-.category-title.red {
-    color: #dc2d37;
-}
-
-/* =========================================================
-   SUBCATEGORY
-   ========================================================= */
-
-.subcategory {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    font-size: 21px;
-    font-weight: 800;
-
-    padding: 14px 4px;
-    margin: 15px 0 20px;
-
-    border-bottom: 2px solid #e1d7c3;
-}
-
-.subcategory span {
-    color: #dc2d37;
-    font-size: 17px;
-}
-
-/* =========================================================
-   PRODUCT GRID
-   ========================================================= */
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-/* =========================================================
-   PRODUCT CARD
-   ========================================================= */
-
-.product {
-    background: #fffdf5;
-    border: 1px solid #e8dfcf;
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-}
-
-/* =========================================================
-   SQUARE PRODUCT IMAGE
-   ========================================================= */
-
-.product img {
-    display: block;
-
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    object-fit: contain;
-
-    background: #faf5eb;
-
-    border-radius: 10px;
-
-    margin-bottom: 14px;
-}
-
-/* =========================================================
-   PRODUCT TEXT
-   ========================================================= */
-
-.product h3 {
-    font-size: 19px;
-    line-height: 1.25;
-    font-weight: 800;
-
-    color: #232323;
-
-    margin-bottom: 7px;
-}
-
-.product p {
-    font-size: 14px;
-    line-height: 1.45;
-
-    color: #696969;
-
-    margin-bottom: 10px;
-}
-
-.product strong {
-    display: block;
-
-    color: #dc2d37;
-
-    font-size: 18px;
-    font-weight: 800;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    text-align: center;
-
-    border-top: 2px solid #e1d7c3;
-
-    padding: 25px 10px 10px;
-
-    color: #696969;
-}
-
-footer strong {
-    font-size: 16px;
-    color: #1e5fbe;
-}
-
-footer p {
-    margin-top: 7px;
-    font-size: 13px;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 650px) {
-
-    .header {
-        padding: 20px 10px 17px;
-    }
-
-    .logo {
-        font-size: 38px;
-    }
-
-    .menu-title {
-        font-size: 19px;
-    }
-
-    .menu-container {
-        padding: 16px 12px 45px;
-    }
-
-    .category-title {
-        font-size: 26px;
-    }
-
-    .subcategory {
-        font-size: 19px;
-    }
-
-    .products {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .product {
-        padding: 15px;
-    }
-
-    .product h3 {
-        font-size: 20px;
-    }
-
-    .product p {
-        font-size: 15px;
-    }
-
-    .product strong {
-        font-size: 19px;
-    }
-}
-
-/* =========================================================
-   LARGER SCREENS
-   ========================================================= */
-
-@media (min-width: 900px) {
-
-    .products {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .product h3 {
-        font-size: 18px;
-    }
-
-    .product p {
-        font-size: 14px;
-    }
 }
